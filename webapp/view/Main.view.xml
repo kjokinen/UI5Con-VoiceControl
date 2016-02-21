@@ -1,16 +1,24 @@
 <mvc:View controllerName="ui5con.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
-	<App>
+	<App id="app" height="100%">
 		<pages>
-			<Page title="{i18n>title}">
+			<Page id="page" title="{i18n>title}">
 				<content>
-					<l:VerticalLayout class="sapUiSmallMargin" id="contentCnt" visible="false">
-						<Text text="{i18n>hellofrankfurt}" />
-						<Image
-							class="sapUiSmallMarginEnd"
-							src="{i18n>welcomelogo}">
-						</Image>
+					<l:VerticalLayout class="sapUiSmallMargin" id="contentCnt">
+						<VBox id="helloContent" visible="false">
+							<Text text="{i18n>hellofrankfurt}" />
+							<Image
+								class="sapUiSmallMarginEnd"
+								src="{i18n>welcomelogo}">
+							</Image>
+						</VBox>
 					</l:VerticalLayout>
 				</content>
+			</Page>
+			<Page id="page2" title="{i18n>title}">
+				<VBox id="myselfContent" visible="false">
+					<Label text="{i18n>myselflabel}" />
+					<Text text="{i18n>myself}" />
+				</VBox>
 			</Page>
 		</pages>
 	</App>

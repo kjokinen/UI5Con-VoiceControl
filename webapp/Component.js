@@ -35,9 +35,17 @@ sap.ui.define([
 						var msg = "Speech recognition test OK";
 						MessageToast.show(msg);
 					},
+					"Back": function() {
+						jQuery.sap.log.info("back command received");
+						that.sendVoiceControlEvent("back");
+					},
 					"Hello": function() {
 						jQuery.sap.log.info("hello command received");
 						that.sendVoiceControlEvent("hello");
+					},
+					"Who": function() {
+						jQuery.sap.log.info("Who command received");
+						that.sendVoiceControlEvent("whoami");
 					}
 				};
 				// Add our commands to annyang
