@@ -1,0 +1,19 @@
+{
+  "name": "ui5con.VoiceControlYourApp",
+  "version": "0.0.1",
+  "description": "UI5Con demo for voice controlling UI5 apps",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kimmo Jokinen",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.13.1",
+    "grunt": "^0.4.5",
+    "grunt-express-server": "^0.4.19",
+    "phantomjs": "^1.9.19",
+    "request": "^2.48.0"
+  }
+}
