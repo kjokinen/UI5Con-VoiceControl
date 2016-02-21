@@ -13,9 +13,15 @@
 						</VBox>
 					</l:VerticalLayout>
 				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="page1NextIconPress" />
+					</Toolbar>
+				</footer>
 			</Page>
-			<Page id="page2" title="{i18n>title}">
-				<VBox id="myselfContent" visible="false">
+			<Page id="page2" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
+				<VBox id="myselfContent" visible="true">
 					<Label text="{i18n>myselflabel}" />
 					<Text text="{i18n>myself}" />
 				</VBox>

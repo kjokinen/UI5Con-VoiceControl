@@ -11,20 +11,33 @@ sap.ui.define([
 
 		handleVoiceControlEvent: function(channel, event, data){
 			var view = this.getView();
-			var app = view.byId("app");
 			switch (data.name) {
 				case "hello":
 					view.byId("helloContent").setVisible(true);
 					break;
 				case "whoami":
-					app.to(view.createId("page2"), "slide");
-					var myselfContent = view.byId("myselfContent");
-					myselfContent.setVisible(true);
+					this.navToPage2();
 					break;
 				case "back":
-					app.back();
+					this.navBack();
 					break;
 			}
+		},
+
+		navBack: function(){
+			var view = this.getView();
+			var app = view.byId("app");
+			app.back();
+		},
+
+		navToPage2: function(){
+			var view = this.getView();
+			var app = view.byId("app");
+			app.to(view.createId("page2"), "slide");
+		},
+
+		page1NextIconPress: function(){
+			this.navToPage2();
 		}
 	});
 
