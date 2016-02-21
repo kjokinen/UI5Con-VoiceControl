@@ -1,9 +1,15 @@
-<mvc:View controllerName="ui5con.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="ui5con.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<TextArea id="textArea" />
+					<l:VerticalLayout class="sapUiSmallMargin" id="contentCnt" visible="false">
+						<Text text="{i18n>hellofrankfurt}" />
+						<Image
+							class="sapUiSmallMarginEnd"
+							src="{i18n>welcomelogo}">
+						</Image>
+					</l:VerticalLayout>
 				</content>
 			</Page>
 		</pages>

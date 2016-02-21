@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"ui5con/model/models"
-], function(UIComponent, Device, models) {
+	"ui5con/model/models",
+	"sap/m/MessageToast"
+], function(UIComponent, Device, models, MessageToast) {
 	"use strict";
 
 	return UIComponent.extend("ui5con.Component", {
@@ -26,11 +27,17 @@ sap.ui.define([
 		},
 
 		startVoiceCapture: function() {
+			var that = this;
 			if (annyang) {
 				// Let's define our first command. First the text we expect, and then the function it should call
 				var commands = {
-					'hello': function() {
-						//$('#tpsreport').animate({bottom: '-100px'});
+					"Test": function(){
+						var msg = "Speech recognition test OK";
+						MessageToast.show(msg);
+					},
+					"Hello": function() {
+						jQuery.sap.log.info("hello command received");
+						that.sendVoiceControlEvent("hello");
 					}
 				};
 				// Add our commands to annyang
@@ -38,6 +45,15 @@ sap.ui.define([
 				// Start listening. You can call this here, or attach this call to an event, button, etc.
 				annyang.start();
 			}
+		},
+
+		sendVoiceControlEvent: function(name, value){
+			var eventBus = sap.ui.getCore().getEventBus();
+			eventBus.publish("voicecontrolyourapp", "voiceControl", {
+					name: name,
+					value: value
+				}
+			);
 		}
 	});
 
