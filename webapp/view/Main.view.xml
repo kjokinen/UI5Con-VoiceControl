@@ -8,7 +8,8 @@
 							<Text text="{i18n>hellofrankfurt}" />
 							<Image
 								class="sapUiSmallMarginEnd"
-								src="{i18n>welcomelogo}">
+								src="{i18n>welcomelogo}"
+								width="100%">
 							</Image>
 						</VBox>
 					</l:VerticalLayout>
@@ -60,9 +61,13 @@
 				<content>
 					<l:VerticalLayout class="sapUiLargeMargin">
 						<Label text="{i18n>videoexample}" />
-						<html:video id="video" width='50%' height='50%' press="videoPressed">
+						<html:video id="video" width='50%' height='50%'>
 							<html:source src='images/voicesearch2.mp4' type='video/mp4' />
 						</html:video>
+						<HBox>
+							<Button icon="{i18n>playicon}" press="playPressed" />
+							<Button icon="{i18n>stopicon}" press="stopPressed" />
+						</HBox>
 					</l:VerticalLayout>
 				</content>
 				<footer>

@@ -49,24 +49,22 @@ sap.ui.define([
 			MessageToast.show(msg);
 		},
 
-		videoPressed: function(){
-			if(this.isPlaying){
-				this.stopVideo();
-			}else{
-				this.playVideo();
-			}
+		playPressed: function(){
+			this.playVideo();
+		},
+
+		stopPressed: function(){
+			this.stopVideo();
 		},
 
 		playVideo: function(){
 			var view = this.getView();
 			view.byId("video").$()[0].play();
-			this.isPlaying = true;
 		},
 
 		stopVideo: function(){
 			var view = this.getView();
 			view.byId("video").$()[0].pause();
-			this.isPlaying = false;
 		},
 
 		navBack: function(){
@@ -88,6 +86,9 @@ sap.ui.define([
 					break;
 				case view.createId("page3"):
 					this.navToPage(view.createId("page4"));
+					break;
+				case view.createId("page4"):
+					this.navToPage(view.createId("pageLast"));
 					break;
 			}
 		},
