@@ -39,6 +39,10 @@ sap.ui.define([
 						jQuery.sap.log.info("back command received");
 						that.sendVoiceControlEvent("back");
 					},
+					"Next": function() {
+						jQuery.sap.log.info("next command received");
+						that.sendVoiceControlEvent("next");
+					},
 					"Hello": function() {
 						jQuery.sap.log.info("hello command received");
 						that.sendVoiceControlEvent("hello");
@@ -46,6 +50,14 @@ sap.ui.define([
 					"Who": function() {
 						jQuery.sap.log.info("Who command received");
 						that.sendVoiceControlEvent("whoami");
+					},
+					"Play": function() {
+						jQuery.sap.log.info("Play command received");
+						that.sendVoiceControlEvent("play");
+					},
+					"Stop": function() {
+						jQuery.sap.log.info("Stop command received");
+						that.sendVoiceControlEvent("stop");
 					}
 				};
 				// Add our commands to annyang
